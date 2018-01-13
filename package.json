@@ -1,0 +1,32 @@
+{
+  "name": "nyt-react-app",
+  "version": "1.0.0",
+  "description": "React-based application that search New York Times (NYT) using the NYT API, React components, helper/util functions, and utilizes the React mounting lifecycle to query and display articles based on user searches. Also uses Node.js, Express.js and MongoDB/Mongoose so users can save articles to read later.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffreylowy/nyt-react-app.git"
+  },
+  "keywords": [
+    "React",
+    "Node.js",
+    "Express.js",
+    "Mongo",
+    "Mongoose"
+  ],
+  "author": "Jeffrey Lowy <jeffreylowy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffreylowy/nyt-react-app/issues"
+  },
+  "homepage": "https://github.com/jeffreylowy/nyt-react-app#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -19,22 +21,108 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <title>New York Times Search</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div class="container" id="root">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>
+          <strong>
+            <i class="fa fa-newspaper-o"></i> New York Times Search</strong>
+        </h1>
+      </div>
+    </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <strong>
+                <i class="fa  fa-list-alt"></i> Search Parameters</strong>
+            </h3>
+          </div>
+          <div class="panel-body">
+
+            <form role="form">
+
+              <div class="form-group">
+                <label for="searchTerm">Search Term:</label>
+                <input type="text" class="form-control" id="searchTerm">
+              </div>
+
+              <div class="form-group">
+                <label for="numRecordsSelect">Number of Records to Retrieve:</label>
+                <select class="form-control" id="numRecordsSelect">
+                  <option value="1">1</option>
+                  <!-- Setting the option for 5 as default -->
+                  <option value="5" selected="">5</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="startYear">Start Year (Optional):</label>
+                <input type="text" class="form-control" id="startYear">
+              </div>
+
+              <div class="form-group">
+                <label for="endYear">End Year (Optional):</label>
+                <input type="text" class="form-control" id="endYear">
+              </div>
+
+              <button type="submit" class="btn btn-default" id="runSearch">
+                <i class="fa fa-search"></i> Search</button>
+              <button type="button" class="btn btn-default" id="clearAll">
+                <i class="fa fa-trash"></i> Clear Results</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+
+        <div class="panel panel-primary">
+
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <strong>
+                <i class="fa fa-table"></i> Top Articles</strong>
+            </h3>
+          </div>
+
+          <div class="panel-body" id="wellSection">
+            <div class="well" id="articleWell-1">
+              <h3>
+                <span class="label label-primary">1</span>
+                <strong>Title</strong>
+              </h3>
+              <h5>By authorname</h5>
+              <h5>Section: ???</h5>
+              <h5>date</h5>
+              <a href="#">URL</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
