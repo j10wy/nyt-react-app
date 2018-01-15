@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import react_logo from '../logo.svg';
-import nyt_logo from '../nyt-logo.svg';
-
+import react_logo from '../img/logo.svg';
+import nyt_logo from '../img/nyt-logo.svg';
+import './jumbotron.css';
 class Jumbotron extends Component {
 
   render() {
-    return (<div class="jumbotron">
-    <div class="container">
-      <h1>
-        <strong>
-          <i class="fa fa-newspaper-o"></i> New York Times Search</strong>
-      </h1>
-    </div>
-  </div>)
+    return (
+      <div className="jumbotron App-header">
+        <div className="container">
+          <header>
+            <img src={ react_logo } className="App-logo" />
+            <img src={ nyt_logo } style={ { height: '80px' } } />
+          </header>
+        </div>
+      </div>
+    )
   }
 }
 

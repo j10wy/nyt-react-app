@@ -8,7 +8,7 @@ class Search extends Component {
             <div class="panel-heading">
               <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i> Search Parameters</strong></h3>
               <div class="panel-body">
-                <form role="form">
+                <form>
                   <div class="form-group">
                   <label for="searchTerm">Search Term:</label>
                   <input type="text" class="form-control" id="searchTerm" />

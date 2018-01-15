@@ -17,7 +17,7 @@ class Result extends Component {
               <h5>By authorname</h5>
               <h5>Section: ???</h5>
               <h5>date</h5>
-              <a href="#">URL</a>
+              <button href="#">URL</button>
             </div>
           </div>
         </div>
