@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import react_logo from '../logo.svg';
+import nyt_logo from '../nyt-logo.svg';
 
 class Jumbotron extends Component {
 

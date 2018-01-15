@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import react_logo from './logo.svg';
-import nyt_logo from './nyt-logo.svg';
-import  Jumbotron from "./components/jumbotron";
+import Jumbotron from "./components/jumbotron";
+import Search from "./components/search";
+import Result from "./components/results";
 import './App.css';
-
 class App extends Component {
   render() {
     return (
@@ -18,6 +17,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */}
         <Jumbotron />
+        <Search />
+        <Result />
       </div>
     );
   }
