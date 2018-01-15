@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
 
@@ -23,5 +23,5 @@ app.get("*", function(req, res) {
 });
 
 app.listen(PORT, function() {
-  console.log(`Server now on port http://localhost:${PORT}!`);
+  console.log(`Server running on port http://localhost:${PORT}!`);
 });
