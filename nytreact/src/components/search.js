@@ -2,39 +2,26 @@ import React, { Component } from 'react';
 class Search extends Component {
   render() {
     return (
-      <div className="row">
-        <div className="col-sm-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i> Search Parameters</strong></h3>
-              <div class="panel-body">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div class="card">
+              <h5 class="card-header bg-dark text-white">{this.props.title}</h5>
+              <div class="card-body">
                 <form>
                   <div class="form-group">
-                  <label for="searchTerm">Search Term:</label>
-                  <input type="text" class="form-control" id="searchTerm" />
+                    <label for="inputAddress">Topic</label>
+                    <input type="text" class="form-control form-control-lg" id="topic" placeholder="A helper should go here" />
                   </div>
-                  <div class="form-group">
-                    <label for="numRecordsSelect">Number of Records to Retrieve:</label>
-                    <select class="form-control" id="numRecordsSelect">
-                      <option value="1">1</option>
-                      <option value="5" selected="">5</option>
-                      <option value="10">10</option>
-                    </select>
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Start Year" />
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="End Year" />
+                    </div>
                   </div>
-                  <div class="form-group">
-                  <label for="startYear">Start Year (Optional):</label>
-                  <input type="text" class="form-control" id="startYear" />
-                  </div>
-
-                  <div class="form-group">
-                  <label for="endYear">End Year (Optional):</label>
-                  <input type="text" class="form-control" id="endYear" />
-                  </div>
-
-                  <button type="submit" class="btn btn-default" id="runSearch">
-                  <i class="fa fa-search"></i> Search</button>
-                  <button type="button" class="btn btn-default" id="clearAll">
-                  <i class="fa fa-trash"></i> Clear Results</button>
+                  <button type="submit" class="btn btn-primary" style={{marginTop:'10px'}}>Search</button>
                 </form>
               </div>
             </div>

@@ -9,8 +9,8 @@ class Jumbotron extends Component {
       <div className="jumbotron App-header">
         <div className="container">
           <header>
-            <img src={ react_logo } className="App-logo" />
-            <img src={ nyt_logo } style={ { height: '80px' } } />
+            <img src={ react_logo } className="App-logo" alt=""/>
+            <img src={ nyt_logo } style={ { height: '80px' } } alt="" />
           </header>
         </div>
       </div>

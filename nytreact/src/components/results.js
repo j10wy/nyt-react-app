@@ -3,27 +3,25 @@ import React, { Component } from 'react';
 class Result extends Component {
   render() {
     return (
-      <div class="row">
-      <div class="col-sm-12">
-        <div class="panel panel-primary">
-
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong><i class="fa fa-table"></i> Top Articles</strong></h3>
-          </div>
-
-          <div class="panel-body" id="wellSection">
-            <div class="well" id="articleWell-1">
-              <h3><span class="label label-primary">1</span><strong>Title</strong></h3>
-              <h5>By authorname</h5>
-              <h5>Section: ???</h5>
-              <h5>date</h5>
-              <button href="#">URL</button>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div class="card">
+              <h5 class="card-header bg-dark text-white">{ this.props.title }</h5>
+              <div class="card-body">
+                <ul class="list-group">
+                  <li class="list-group-item">Cras justo odio <button type="button" class="btn btn-danger float-right">Save</button></li>
+                  <li class="list-group-item">Dapibus ac facilisis in <button type="button" class="btn btn-danger float-right">Save</button></li>
+                  <li class="list-group-item">Morbi leo risus <button type="button" class="btn btn-danger float-right">Save</button></li>
+                  <li class="list-group-item">Porta ac consectetur ac <button type="button" class="btn btn-danger float-right">Save</button></li>
+                  <li class="list-group-item">Vestibulum at eros <button type="button" class="btn btn-danger float-right">Save</button></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    );
+      );
   }
 }
 
