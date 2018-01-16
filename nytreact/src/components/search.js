@@ -1,19 +1,8 @@
-import React, { Component } from 'react';
-import api from "../utils/api";
+import React from 'react';
 import Card from './card';
 
-class Search extends Component {
+const Search = () => {
 
-  handleInputChange(event) {
-    console.log(event.target.value);
-  }
-
-  handleFormSubmit(event) {
-    event.preventDefault();
-    this.searchMovies(this.state.search);
-  }
-
-  render() {
     return (
       <Card title="Search the NYT Article Database" id="search">
         <form>
@@ -35,7 +24,6 @@ class Search extends Component {
         </form>
       </Card>
     )
-  }
 }
 
 export default Search;
