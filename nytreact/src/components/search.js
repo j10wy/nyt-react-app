@@ -15,7 +15,7 @@ class Search extends Component {
 
   render() {
     return (
-      <Card title="Search the NYT Article Database">
+      <Card title="Search the NYT Article Database" id="search">
         <form>
           <div className="form-group">
             <label htmlFor="inputAddress">Topic</label>
