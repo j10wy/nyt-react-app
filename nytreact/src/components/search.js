@@ -4,6 +4,10 @@ import Card from './card';
 
 class Search extends Component {
 
+  handleInputChange(event) {
+    console.log(event.target.value);
+  }
+
   handleFormSubmit(event) {
     event.preventDefault();
     this.searchMovies(this.state.search);
@@ -20,7 +24,7 @@ class Search extends Component {
           <div className="form-row">
             <div className="col">
               <label htmlFor="startDate">Start Date</label>
-              <input type="text" name="startDate" className="form-control" placeholder="YYYMMDD" />
+              <input type="text" onChange={this.handleInputChange} name="startDate" className="form-control" placeholder="YYYMMDD" />
             </div>
             <div className="col">
               <label htmlFor="endDate">End Date</label>
