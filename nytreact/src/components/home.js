@@ -5,22 +5,45 @@ import Result from './results';
 import api from "../utils/api";
 
 class Home extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			result: {},
+			search: "Search for something"
+		  };
+	  }
+
+	searchNYT(query) {
+		api.search(query)
+		  .then(res => this.setState({ result: res.data }))
+		  .catch(err => console.log(err));
+	  };
+
 	handleInputChange(event) {
 		console.log(event.target.value);
 	}
 
-	handleFormSubmit(event) {
+	handleSubmit(event) {
 		event.preventDefault();
-		this.searchMovies(this.state.search);
+		console.log(event.target);
+		//this.searchMovies(this.state.search);
 	}
 	render() {
 		return (
-			<div>
-     <Search />
-     <Route exact path="/results" render={ () => (
-		<Result results={ [{ title: 'one', button: "Save" }, { title: 'one', button: "Save" }] } />
-		) } />
-   </div>);
+		<div>
+			<Search
+			testing={this.state.search}
+			handleInputChange={this.handleInputChange}
+			handleSubmit={this.handleSubmit}
+			/>
+
+			<Route exact path="/results"
+			render={ () => (
+				<Result results={ [{ title: 'one', button: "Save" }, { title: 'one', button: "Save" }] } />
+			) } />
+		</div>
+   );
 	}
 }
 

@@ -1,26 +1,26 @@
 import React from 'react';
 import Card from './card';
 
-const Search = () => {
+const Search = (props) => {
 
     return (
       <Card title="Search the NYT Article Database" id="search">
-        <form>
+        <form onChange={props.handleSubmit}>
           <div className="form-group">
             <label htmlFor="inputAddress">Topic</label>
-            <input type="text" className="form-control form-control-lg" id="topic" placeholder="A helper should go here" />
+            <input type="text" className="form-control form-control-lg" id="topic" placeholder={props.testing} />
           </div>
           <div className="form-row">
             <div className="col">
               <label htmlFor="startDate">Start Date</label>
-              <input type="text" onChange={this.handleInputChange} name="startDate" className="form-control" placeholder="YYYMMDD" />
+              <input type="text" onChange={props.handleInputChange} name="startDate" className="form-control" placeholder="YYYMMDD" />
             </div>
             <div className="col">
               <label htmlFor="endDate">End Date</label>
-              <input type="text" name="endDate" className="form-control" placeholder="YYYMMDD" />
+              <input type="text" onChange={props.handleInputChange} name="endDate" className="form-control" placeholder="YYYMMDD" />
             </div>
           </div>
-          <button type="submit" className="btn btn-primary" style={ { marginTop: '10px' } }>Search</button>
+          <button type="submit" onClick={props.handleSubmit} className="btn btn-primary" style={ { marginTop: '10px' } }>Search</button>
         </form>
       </Card>
     )
