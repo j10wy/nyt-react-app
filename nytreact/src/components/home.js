@@ -10,13 +10,13 @@ class Home extends Component {
 		super(props);
 		this.state = {
 			result: {},
-			search: "Search for something"
+			search: "Search for something2"
 		  };
 	  }
 
-	searchNYT(query) {
-		api.search(query)
-		  .then(res => this.setState({ result: res.data }))
+	searchNYT(topic, start, end) {
+		api.search(topic, start, end)
+		  .then(res => console.log(res.data))
 		  .catch(err => console.log(err));
 	  };
 
@@ -28,6 +28,10 @@ class Home extends Component {
 		event.preventDefault();
 		console.log(event.target);
 		//this.searchMovies(this.state.search);
+	}
+
+	componentDidMount() {
+		this.searchNYT("michaeljordan2","20170101", "20180101");
 	}
 	render() {
 		return (

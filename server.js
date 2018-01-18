@@ -5,7 +5,7 @@ const app = express();
 const apiRoutes = require("./routes/apiRoutes");
 
 // Serve up static assets
-app.use(express.static("nytreact/build"));
+app.use(express.static("nytreact/public"));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
