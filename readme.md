@@ -36,3 +36,4 @@ Web Font Loader, a product that is co-developed by Google and Typekit. You can u
 [How to add Fonts to a React Project](https://scotch.io/@micwanyoike/how-to-add-fonts-to-a-react-project)
 [React component communication](https://www.javascriptstuff.com/component-communication/)
 [Iterating & Rendering with Loops in React components](https://thinkster.io/tutorials/iterating-and-rendering-loops-in-react)
+[Pass props from <Route> to rendered `component`](https://github.com/ReactTraining/react-router/issues/4627)

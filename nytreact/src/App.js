@@ -11,7 +11,7 @@ class App extends Component {
         <div>
           <Jumbotron title="New York Times Search" />
           <Home />
-          <Route exact path="/saved" component={Saved} />
+          <Route exact path="/saved" render={Saved} />
         </div>
       </BrowserRouter>
       );

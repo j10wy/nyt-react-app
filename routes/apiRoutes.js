@@ -17,15 +17,17 @@ router.get("/nyt/:start/:end/:topic", function (request, response) {
   }).then(res => {
 
     let nytResponse = res.data.response.docs;
-    let sendToReact = nytResponse.map((item, i)=>{
+    let sendToReact = nytResponse.map((item)=>{
       return {
         url:item.web_url,
-        page:item.print_page || 'n/a'
-      }
+        headline:item.headline.main,
+        snippet:item.snippet,
+        pub_date:item.pub_date,
+        img: item.multimedia.url
+      };
     });
 
-    console.log(sendToReact);
-    response.send("Hi");
+    response.send(sendToReact);
 
   }).catch(err => {
     console.log(err);
@@ -36,11 +38,6 @@ router.get("/nyt/:start/:end/:topic", function (request, response) {
 router.get("/articles", (req, res) => {
 
   // your components will use this to query MongoDB for all saved articles
-
-  // axios
-  //   .get("URL", { params: req.query })
-  //   .then(({ data: { results } }) => res.json(results))
-  //   .catch(err => res.status(422).json(err));
 
 });
 

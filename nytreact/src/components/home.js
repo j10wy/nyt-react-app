@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Search from './search';
 import Result from './results';
 import api from "../utils/api";
@@ -9,45 +9,50 @@ class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			result: {},
-			search: "Search for something2"
-		  };
-	  }
+			results: [],
+			start: "",
+			end: "",
+			topic: "",
+			search: "Search for something..."
+		};
+	}
 
 	searchNYT(topic, start, end) {
 		api.search(topic, start, end)
-		  .then(res => console.log(res))
-		  .catch(err => console.log(err));
-	  };
+			.then((res) => {
+				this.setState({
+					results: res.data
+				});
+				console.log("RESD:", this.state.result);
+			})
+			.catch(err => console.log(err));
+	};
 
 	handleInputChange(event) {
 		console.log(event.target.value);
+		const name = event.target.name;
+		const value = event.target.value;
+		this.setState({
+			[name]: value
+		});
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(event.target);
-		//this.searchMovies(this.state.search);
+		this.searchNYT("a tribe called quest", "20170101", "20180101");
 	}
 
-	componentDidMount() {
-		this.searchNYT("obama","20170101", "20180101");
-	}
-	render() {
+	render = () => {
 		return (
-		<div>
-			<Search
-			testing={this.state.search}
-			handleInputChange={this.handleInputChange}
-			handleSubmit={this.handleSubmit}
-			/>
-
-			<Route exact path="/results"
-			render={ () => (
-				<Result results={ [{ title: 'one', button: "Save" }, { title: 'one', button: "Save" }] } />
-			) } />
-		</div>
-   );
+			<div>
+     <Search testing={ this.state.search } handleInputChange={ this.handleInputChange } handleSubmit={ this.handleSubmit } />
+     <Router>
+       <Route exact path="/results" render={ (props) => (
+                                             	<Result {...props} results={this.state.results } />
+                                             ) } />
+     </Router>
+   </div>
+			);
 	}
 }
 
