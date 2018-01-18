@@ -16,7 +16,7 @@ class Home extends Component {
 
 	searchNYT(topic, start, end) {
 		api.search(topic, start, end)
-		  .then(res => console.log(res.data))
+		  .then(res => console.log(res))
 		  .catch(err => console.log(err));
 	  };
 
@@ -31,7 +31,7 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		this.searchNYT("michaeljordan2","20170101", "20180101");
+		this.searchNYT("obama","20170101", "20180101");
 	}
 	render() {
 		return (

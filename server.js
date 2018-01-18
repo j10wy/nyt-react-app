@@ -1,11 +1,12 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3001;
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require('./routes/apiRoutes');
 
 // Serve up static assets
-app.use(express.static("nytreact/public"));
+app.use(express.static('nytreact/public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,11 +15,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Use apiRoutes
-app.use("/api", apiRoutes);
+app.use('/api', apiRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get('*', function(req, res) {
   res.sendFile(`${__dirname}/nytreact/build/index.html`);
 });
 
