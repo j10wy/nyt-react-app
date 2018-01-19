@@ -2,6 +2,8 @@
 
 React-based application that search New York Times (NYT) using the NYT API, React components, helper/util functions, and utilizes the React mounting lifecycle to query and display articles based on user searches. Also uses Node.js, Express.js and MongoDB/Mongoose so users can save articles to read later.
 
+[View on Heroku](https://nytreactjs.herokuapp.com)
+
 ## Table of Contents
 
 [Yarn Commands](#yarn-commands)<br>
@@ -33,7 +35,7 @@ Web Font Loader, a product that is co-developed by Google and Typekit. You can u
 [Bootstrap Docs](https://getbootstrap.com/docs/4.0/getting-started/introduction/)<br>
 [React Router Docs](https://github.com/ReactTraining/react-router)<br>
 [Shards Docs](https://designrevision.com/docs/shards/)<br>
-[How to add Fonts to a React Project](https://scotch.io/@micwanyoike/how-to-add-fonts-to-a-react-project)
-[React component communication](https://www.javascriptstuff.com/component-communication/)
-[Iterating & Rendering with Loops in React components](https://thinkster.io/tutorials/iterating-and-rendering-loops-in-react)
-[Pass props from <Route> to rendered `component`](https://github.com/ReactTraining/react-router/issues/4627)
+[How to add Fonts to a React Project](https://scotch.io/@micwanyoike/how-to-add-fonts-to-a-react-project)<br>
+[React component communication](https://www.javascriptstuff.com/component-communication/)<br>
+[Iterating & Rendering with Loops in React components](https://thinkster.io/tutorials/iterating-and-rendering-loops-in-react)<br>
+[Pass props from <Route> to rendered `component`](https://github.com/ReactTraining/react-router/issues/4627)<br>
