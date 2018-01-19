@@ -20,9 +20,10 @@ app.use('/api', apiRoutes);
 // Send every request to the React app
 // Define any API routes before this runs
 app.get('*', function(req, res) {
-  res.sendFile(`./nytreact/build/index.html`);
+  res.sendFile('nytreact/build/index.html');
 });
 
 app.listen(PORT, function() {
+  console.log("dir",__dirname);
   console.log(`Server running on port http://localhost:${PORT}!`);
 });
