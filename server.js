@@ -20,7 +20,7 @@ app.use('/api', apiRoutes);
 // Send every request to the React app
 // Define any API routes before this runs
 app.get('*', function(req, res) {
-  res.sendFile('index.html');
+  res.sendFile('index.html', { root: '.' });
 });
 
 app.listen(PORT, function() {
